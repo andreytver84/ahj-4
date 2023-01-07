@@ -7,7 +7,32 @@
   <title>Document</title>
 </head>
 <body>
-<h1>Hello, from Netology!</h1>
-<img src="img/netology.svg" alt="Netology Logo">
+<div class="wrap">
+  <div class="container">
+    <main>
+      <div class="validate-title">
+        <h1>Validate page</h1>
+      </div>
+      <div class="validate-block">
+        <div class="cards-block">
+          <div class="card visa"></div>
+          <div class="card master"></div>
+          <div class="card mir"></div>
+          <div class="card american"></div>
+          <div class="card jcb"></div>
+          <div class="card diners"></div>
+        </div>
+        <div class="wrap-validate-form">
+          <form id="validate-card">
+            <div class="input-wrap">
+              <input name="cardnumber" type="text" required placeholder="Number of cards only" >
+              <button type="submit">Click to Validate</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
 </body>
 </html>
