@@ -1,0 +1,32 @@
+[
+    {
+        "name": "mir",
+        "picture": "img/mir.jpg",
+        "code": ["2"]
+    },
+    {
+        "name": "visa",
+        "picture": "img/visa.jpg",
+        "code": ["4"]
+    },
+    {
+        "name": "master",
+        "picture": "img/master.jpg",
+        "code": ["51","52","53","54","55"]
+    },
+    {
+        "name": "maestro",
+        "picture": "img/maestro.jpg",
+        "code": ["34","37"]
+    },
+    {
+        "name": "jcb",
+        "picture": "img/jcb.jpg",
+        "code": ["31","35"]
+    },
+    {
+        "name": "china",
+        "picture": "img/china.jpg",
+        "code": ["62"]
+    }
+]

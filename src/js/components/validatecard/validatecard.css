@@ -1,0 +1,48 @@
+/*Validate card*/
+
+.cards-block {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 5px;
+}
+
+.card {
+    border: 1px solid;
+    width: 45px;
+    height: 30px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    overflow: hidden;
+    font-size: 8px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    opacity: 0.2;
+}
+
+.active-card {
+    opacity: 1;;
+}
+
+.validate-input {
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid #888;
+    min-width: 200px
+}
+
+.validate-btn {
+    background: #5eb462;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 11px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #3c8640;
+}
+
+/*End of Validate card*/
