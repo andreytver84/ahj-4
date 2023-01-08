@@ -1,6 +1,6 @@
 /*Validate card*/
 
-div.cards-block {
+.cards-block {
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 5px;
