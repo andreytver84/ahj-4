@@ -17,18 +17,19 @@ const validatecard = new ValidateCard(".validate-block", cardlist.filterCard);
 
 cardlist.renderCards();
 
-/* 2-Мир
-3- American Express, JCB International, Diners Club
-____30,36,38-Diners Club
-____31,35-JCB International
-____34,37-American Express
-4- VISA
-5- MasterCard, Maestro
-____50,56,57,58-Maestro
-____51,52,53,54,55-MasterCard
-6- Maestro, China UnionPay, Discover
-____60-Discover
-____62 - China UnionPay
-____63, 67 - Maestro  */
+/* function isValid(cardNumber[1..length])
+    sum := 0
+    parity := length mod 2
+    for i from 1 to length do
+        if i mod 2 = parity then
+            sum := sum + cardNumber[i]
+        elseif cardNumber[i] > 4 then
+            sum := sum + 2 * cardNumber[i] - 9
+        else
+            sum := sum + 2 * cardNumber[i]
+        end if
+    end for
+    return sum mod 10 = 0
+end function */
 
 console.log("app.js included");
