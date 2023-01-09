@@ -17,7 +17,7 @@ export class CardsList {
   }
 
   renderCard(card) {
-    return `<div class="card ${card.name}"><img src="/${card.picture}" alt="${card.name}" ></div>`;
+    return `<div class="card ${card.name}"><img src="${card.picture}" alt="${card.name}" ></div>`;
   }
 
   renderCards() {
