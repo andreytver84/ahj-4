@@ -1,5 +1,5 @@
 import "./validatecard.css";
-import moon from "./validatenumber";
+import {moon} from "./validatenumber";
 
 export class ValidateCard {
   constructor(element, filterHandler) {
