@@ -45,4 +45,12 @@ button:hover {
     background: #3c8640;
 }
 
+.valid {
+    border: 2px solid green;
+}
+
+.invalid {
+    border: 2px solid red;
+}
+
 /*End of Validate card*/

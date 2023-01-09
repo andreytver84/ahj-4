@@ -3,14 +3,14 @@ export function moon(cardNumber) {
   cardNumber = cardNumber.toString();
   for (let i = 0; i < cardNumber.length; i++) {
     if (i % 2 === 0) {
-      let m = +(cardNumber[i]) * 2;
+      let m = +cardNumber[i] * 2;
       if (m > 9) {
         sum = sum + (m - 9);
       } else {
         sum = sum + m;
       }
     } else {
-      let n = +(cardNumber[i]);
+      let n = +cardNumber[i];
       sum = sum + n;
     }
   }

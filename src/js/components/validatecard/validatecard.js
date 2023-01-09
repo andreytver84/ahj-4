@@ -1,5 +1,5 @@
 import "./validatecard.css";
-import {moon} from "./validatenumber";
+import { moon } from "./validatenumber";
 
 export class ValidateCard {
   constructor(element, filterHandler) {
@@ -24,14 +24,16 @@ export class ValidateCard {
   }
   validateNum(num) {
     if (moon(num)) {
-      this.validateInput.style.border = "2px solid green";
+      this.validateInput.classList.remove("invalid");
+      this.validateInput.classList.add("valid");
     } else {
-      this.validateInput.style.border = "2px solid red";
+      this.validateInput.classList.remove("valid");
+      this.validateInput.classList.add("invalid");
     }
   }
   onBtnClick(e) {
     e.preventDefault();
-    const text = this.validateInput.value;
+    const text = +this.validateInput.value;
     this.validateNum(text);
   }
 }

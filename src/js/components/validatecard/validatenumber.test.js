@@ -1,7 +1,7 @@
-import  {moon} from "./validatenumber";
+import { moon } from "./validatenumber";
 
 const cardNumbersValid = [
-  "4485461772024212"/* ,
+  "4485461772024212" /* ,
   "4916976472637285",
   "4532954242793560436",
   "5226318789088211",
@@ -12,10 +12,10 @@ const cardNumbersValid = [
   "3538960712470015037",
   "5038948162699271",
   "5018201566327733",
-  "5038224382573864", */
+  "5038224382573864", */,
 ];
 const cardNumbersInValid = [
-  "448546177024211"/* ,
+  "448546177024211" /* ,
   "491697672637284",
   "453294242793560435",
   "526318789088212",
@@ -26,15 +26,15 @@ const cardNumbersInValid = [
   "353890712470015036",
   "538948162699270",
   "508201566327732",
-  "038224382573863", */
+  "038224382573863", */,
 ];
 
-function testNumOnValid(cardNumArr, res) {  
-    cardNumArr.forEach((item) => {
-        test(`Проверка на карту ${cardNumArr}, ожидается ${res}`, () => {
-            expect(moon(item)).toBe(res);
-        });
-    });        
+function testNumOnValid(cardNumArr, res) {
+  cardNumArr.forEach((item) => {
+    test(`Проверка на карту ${cardNumArr}, ожидается ${res}`, () => {
+      expect(moon(item)).toBe(res);
+    });
+  });
 }
 
 testNumOnValid(cardNumbersValid, true);
