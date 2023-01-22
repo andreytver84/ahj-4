@@ -1,5 +1,5 @@
 import "./validatecard.css";
-import { moon } from "./validatenumber";
+import { luhn } from "./validatenumber";
 
 export class ValidateCard {
   constructor(element, filterHandler) {
@@ -23,7 +23,7 @@ export class ValidateCard {
     this.filterHandler(text);
   }
   validateNum(num) {
-    if (moon(num)) {
+    if (luhn(num)) {
       this.validateInput.classList.remove("invalid");
       this.validateInput.classList.add("valid");
     } else {
@@ -33,7 +33,7 @@ export class ValidateCard {
   }
   onBtnClick(e) {
     e.preventDefault();
-    const text = +this.validateInput.value;
+    const text = this.validateInput.value;
     this.validateNum(text);
   }
 }

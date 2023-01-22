@@ -1,7 +1,7 @@
-import { moon } from "./validatenumber";
+import { luhn } from "./validatenumber";
 
 const cardNumbersValid = [
-  "4485461772024212" /* ,
+  "4485461772024212",
   "4916976472637285",
   "4532954242793560436",
   "5226318789088211",
@@ -12,10 +12,10 @@ const cardNumbersValid = [
   "3538960712470015037",
   "5038948162699271",
   "5018201566327733",
-  "5038224382573864", */,
+  "5038224382573864",
 ];
 const cardNumbersInValid = [
-  "448546177024211" /* ,
+  "448546177024211",
   "491697672637284",
   "453294242793560435",
   "526318789088212",
@@ -26,16 +26,39 @@ const cardNumbersInValid = [
   "353890712470015036",
   "538948162699270",
   "508201566327732",
-  "038224382573863", */,
 ];
 
-function testNumOnValid(cardNumArr, res) {
+/* function testNumOnValid(cardNumArr, res) {
   cardNumArr.forEach((item) => {
     test(`Проверка на карту ${cardNumArr}, ожидается ${res}`, () => {
-      expect(moon(item)).toBe(res);
+      expect(luhn(item)).toBe(res);
     });
   });
 }
 
 testNumOnValid(cardNumbersValid, true);
-testNumOnValid(cardNumbersInValid, false);
+testNumOnValid(cardNumbersInValid, false); */
+
+test.each([
+  ["4485461772024212", true],
+  ["4916976472637285", true],
+  ["4532954242793560436", true],
+  ["2720996103335919", true],
+  ["5134819610303019", true],
+  ["3544291502991963", true],
+  ["3536110359364423", true],
+  ["3538960712470015037", true],
+  ["5038948162699271", true],
+  ["5018201566327733", true],
+  ["5038224382573864", true],
+  ["448546177024211", false],
+  ["491697672637284", false],
+  ["453294242793560435", false],
+  ["526318789088212", false],
+  ["272099610335918", false],
+  ["513481960303018", false],
+  ["354491502991962", false],
+  ["336110359364422", false],
+])("Проверка на карту", (a, expected) => {
+  expect(luhn(a)).toBe(expected);
+});

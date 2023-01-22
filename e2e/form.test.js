@@ -17,13 +17,13 @@ describe('Form test', () => {
   test('form should render', async () => {
     await page.goto('http://localhost:9000');
 
-    await page.waitFor('validate-card');
+    await page.waitForSelector('validate-card');
   });
 
   test('form should add class valid if valid', async () => {
     await page.goto('http://localhost:9000');
 
-    await page.waitFor('.wrap-validate-form');
+    await page.waitForSelector('.wrap-validate-form');
 
     const form = await page.$('#validate-card');
     const input = await form.$('.validate-input');
@@ -31,7 +31,7 @@ describe('Form test', () => {
     await input.type('4485461772024212');
     await submit.click();
 
-    await page.waitFor('.wrap-validate-form .validate-input.valid');
+    await page.waitForSelector('.wrap-validate-form .validate-input.valid');
   });
 
 

@@ -1,20 +1,22 @@
-export function moon(cardNumber) {
-  let sum = 0;
-  cardNumber = cardNumber.toString();
-  for (let i = 0; i < cardNumber.length; i++) {
+export function luhn(card_number) {
+  var arr = [],
+  card_number = card_number.toString();
+  for (var i = 0; i < card_number.length; i++) {
     if (i % 2 === 0) {
-      let m = +cardNumber[i] * 2;
+      var m = parseInt(card_number[i]) * 2;
       if (m > 9) {
-        sum = sum + (m - 9);
+        arr.push(m - 9);
       } else {
-        sum = sum + m;
+        arr.push(m);
       }
     } else {
-      let n = +cardNumber[i];
-      sum = sum + n;
+      var n = parseInt(card_number[i]);
+      arr.push(n);
     }
   }
-  //console.log(sum);
-  //console.log(Boolean(!(sum % 10)));
-  return Boolean(!(sum % 10));
+  //console.log(arr);
+  var summ = arr.reduce(function (a, b) {
+    return a + b;
+  });
+  return Boolean(!(summ % 10));
 }
