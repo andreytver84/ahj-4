@@ -7,7 +7,6 @@ describe('Form test', () => {
   beforeEach(async () => {
     browser = await puppeteer.launch({
       headless: false,
-      slowMo: 100,
       devtools: true,
     });
 
@@ -17,7 +16,7 @@ describe('Form test', () => {
   test('form should render', async () => {
     await page.goto('http://localhost:9000');
 
-    await page.waitForSelector('validate-card');
+    await page.waitForSelector('.validate-card');
   });
 
   test('form should add class valid if valid', async () => {
