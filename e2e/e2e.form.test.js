@@ -1,9 +1,9 @@
 import puppeteer from 'puppeteer';
 import { fork } from 'child_process';
 
-jest.setTimeout(100000); // default puppeteer timeout
+jest.setTimeout(30000); // default puppeteer timeout
 
-describe('Credit Card Validator form', () => {
+describe('Testing validate functionality', () => {
   let browser = null;
   let page = null;
   let server = null;
@@ -20,10 +20,10 @@ describe('Credit Card Validator form', () => {
       });
     });
 
-    browser = await puppetteer.launch({
-       headless: false, // show gui
-       slowMo: 250,
-       devtools: true, // show devTools
+    browser = await puppeteer.launch({
+      headless: true, // show gui
+      slowMo: 250,
+      devtools: false, // show devTools
     });
     page = await browser.newPage();
   });
@@ -33,24 +33,25 @@ describe('Credit Card Validator form', () => {
     server.kill();
   });
 
-  test('form should render', async () => {
-    await page.goto(baseUrl);
-
-    await page.waitForSelector('body');
+  describe('Testing validate card', () => {
+    test('form should render', async () => {
+      await page.goto(baseUrl);
+  
+      await page.waitForSelector('body');
+    });
+  
+    test('form should add class valid if valid', async () => {
+      await page.goto(baseUrl);
+  
+      await page.waitForSelector('.wrap-validate-form');
+  
+      const form = await page.$('.wrap-validate-form');
+      const input = await form.$('.validate-input');
+      const submit = await form.$('.validate-btn');
+      await input.type('4485461772024212');
+      await submit.click();
+  
+      await page.waitForSelector('.wrap-validate-form .validate-input.valid');
+    });
   });
-
-  test('form should add class valid if valid', async () => {
-    await page.goto(baseUrl);
-
-    await page.waitForSelector('.wrap-validate-form');
-
-    const form = await page.$('.wrap-validate-form');
-    const input = await form.$('.validate-input');
-    const submit = await form.$('.validate-btn');
-    await input.type('4485461772024212');
-    await submit.click();
-
-    await page.waitForSelector('.wrap-validate-form .validate-input.valid');
-  });
-
 });
